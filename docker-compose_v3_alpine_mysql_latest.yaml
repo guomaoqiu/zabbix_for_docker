@@ -68,6 +68,20 @@ services:
    com.zabbix.dbtype: "mysql"
    com.zabbix.os: "alpine"
 
+  grafana:
+    image: grafana/grafana:latest
+    container_name: zabbix-grafana
+    environment:
+     TZ: Asia/Shanghai
+    ports:
+      - 3000:3000
+#    volumes:
+##      - /home/data/grafana:/var/lib/grafana
+      - ./grafana/plugins:/var/lib/grafana/plugins
+#    networks:
+#      zabbixbr:
+#        ipv4_address: 172.25.0.2
+#    restart: always
 
  zabbix-web-nginx-mysql:
   image: zabbix/zabbix-web-nginx-mysql:alpine-4.2-latest
