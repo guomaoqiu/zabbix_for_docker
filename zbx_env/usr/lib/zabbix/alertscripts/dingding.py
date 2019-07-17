@@ -1,4 +1,9 @@
 #!/usr/bin/python
+# Author: guomaoqiu
+# QQ: 2399447849
+# Email: 2399447849@qq.com
+# Describe: 钉钉webhook
+
 import requests
 import json
 import sys
