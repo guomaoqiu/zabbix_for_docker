@@ -1,8 +1,11 @@
 version: '3.5'
 services:
  zabbix-server:
+ 
+  # 官方镜像缺少python环境，故从新打包后的新镜像包含python环境;
+  # 此处主要用于执行报警脚本（脚本类型为py）
   image: guomaoqiu/zabbix-server-mysql:alpine-4.2-latest-guomaoqiu
-  #image: guomaoqiu/test
+  
   ports:
    - "10051:10051"
   volumes:
