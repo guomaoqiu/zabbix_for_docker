@@ -75,13 +75,16 @@ services:
      TZ: Asia/Shanghai
     ports:
       - 3000:3000
-#    volumes:
-##      - /home/data/grafana:/var/lib/grafana
-      - ./grafana/plugins:/var/lib/grafana/plugins
-#    networks:
-#      zabbixbr:
-#        ipv4_address: 172.25.0.2
-#    restart: always
+    #volumes:
+    #  - /home/data/grafana:/var/lib/grafana
+    #  - ./grafana/plugins:/var/lib/grafana/plugins
+    networks:
+     zbx_net_backend:
+      aliases:
+       - zabbix-web-nginx-mysql
+       - zabbix-web-nginx-alpine-mysql
+       - zabbix-web-nginx-mysql-alpine
+     zbx_net_frontend:
 
  zabbix-web-nginx-mysql:
   image: zabbix/zabbix-web-nginx-mysql:alpine-4.2-latest
